@@ -179,7 +179,18 @@
     function formatPrice(prix) {
       return (prix === null || prix === undefined || prix === "" || prix === 0) ? "Prix sur demande" : `${prix} €`;
     }
-    function formatCategory(cat) { return cat === 'casquettes' ? 'Casquette' : 'Blazer'; }
+    const categoryLabels = {
+      blazers: "Blazer",
+      casquettes: "Casquette",
+      cravattes: "Cravatte"
+    };
+    const filterOptions = [
+      { id: "tous", label: "Tous" },
+      { id: "blazers", label: "Blazers" },
+      { id: "casquettes", label: "Casquettes" },
+      { id: "cravattes", label: "Cravattes" }
+    ];
+    function formatCategory(cat) { return categoryLabels[cat] || "Piece"; }
     function createCard(item) {
       return `
         <article class="card" data-slug="${item.slug}">
@@ -200,13 +211,12 @@
     }
     function renderGallery() {
       let filtered = items;
-      if (filtreActif === 'blazers' || filtreActif === 'casquettes') filtered = items.filter(i => i.categorie === filtreActif);
+      if (filtreActif !== 'tous') filtered = items.filter(i => i.categorie === filtreActif);
       gallery.innerHTML = filtered.map(createCard).join('');
       document.querySelectorAll('.card').forEach(card => card.addEventListener('click', () => openModal(items.find(i => i.slug === card.dataset.slug))));
     }
     function renderFilters() {
-      const filters = [{id:'tous',label:'Tous'},{id:'blazers',label:'Blazers'},{id:'casquettes',label:'Casquettes'}];
-      filtersContainer.innerHTML = filters.map(f => `<button class="filter-btn ${filtreActif===f.id?'active':''}" data-filter="${f.id}">${f.label}</button>`).join('');
+      filtersContainer.innerHTML = filterOptions.map(f => `<button class="filter-btn ${filtreActif===f.id?'active':''}" data-filter="${f.id}">${f.label}</button>`).join('');
       filtersContainer.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { filtreActif = btn.dataset.filter; renderFilters(); renderGallery(); }));
     }
     function updateModalImage() {
@@ -229,7 +239,7 @@
       document.getElementById('modalSize').textContent = item.taille;
       document.getElementById('modalStatus').textContent = 'Disponible';
       document.getElementById('modalStyle').textContent = item.pointVente;
-      document.getElementById('modalKicker').textContent = item.categorie === 'casquettes' ? 'Casquette unique disponible' : 'Blazer unique disponible';
+      document.getElementById('modalKicker').textContent = `${formatCategory(item.categorie)} unique disponible`;
       updateModalImage();
       modalInstagram.href = INSTAGRAM_URL; modalVinted.href = VINTED_URL; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
     }
