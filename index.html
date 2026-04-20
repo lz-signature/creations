@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LZ Signature — Pièces custom</title>
+  <title>LZ Signature - Pieces custom</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -20,7 +20,7 @@
     * { box-sizing: border-box; margin:0; padding:0; }
     body {
       min-height: 100vh;
-      font-family: 'Manrope', sans-serif;
+      font-family: "Manrope", sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, rgba(201,168,76,0.10), transparent 28%),
@@ -39,11 +39,11 @@
     .shell { position:relative; z-index:1; width:min(1180px, calc(100% - 32px)); margin:0 auto; }
     header { text-align:center; padding:72px 0 26px; }
     .eyebrow { font-size:.72rem; letter-spacing:.45em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
-    .hero-title { font-family:'Cormorant Garamond', serif; font-size:clamp(3rem, 6vw, 5.8rem); font-weight:500; line-height:.95; letter-spacing:.14em; text-indent:.14em; color:transparent; background:linear-gradient(180deg, #fffdf3 0%, var(--gold-soft) 32%, var(--gold) 68%, var(--gold-deep) 100%); -webkit-background-clip:text; background-clip:text; text-transform:uppercase; }
+    .hero-title { font-family:"Cormorant Garamond", serif; font-size:clamp(3rem, 6vw, 5.8rem); font-weight:500; line-height:.95; letter-spacing:.14em; text-indent:.14em; color:transparent; background:linear-gradient(180deg, #fffdf3 0%, var(--gold-soft) 32%, var(--gold) 68%, var(--gold-deep) 100%); -webkit-background-clip:text; background-clip:text; text-transform:uppercase; }
     .divider { display:flex; align-items:center; justify-content:center; gap:12px; margin:18px 0; }
     .divider .line { width:74px; height:1px; background:linear-gradient(90deg, transparent, rgba(201,168,76,0.9), transparent); }
     .divider .star { color:var(--gold); font-size:.72rem; }
-    .subtitle { font-family:'Cormorant Garamond', serif; color:#e7dcc0; font-size:clamp(1.1rem, 2vw, 1.55rem); line-height:1.5; letter-spacing:.08em; }
+    .subtitle { font-family:"Cormorant Garamond", serif; color:#e7dcc0; font-size:clamp(1.1rem, 2vw, 1.55rem); line-height:1.5; letter-spacing:.08em; }
     .logo-wrap { display:flex; justify-content:center; margin:28px 0 10px; }
     .logo-wrap img { width:min(210px, 44vw); height:auto; display:block; filter:drop-shadow(0 10px 28px rgba(201,168,76,0.12)); }
     .submark,.section-title { font-size:.72rem; letter-spacing:.5em; text-transform:uppercase; color:rgba(201,168,76,.9); padding-left:.5em; }
@@ -51,7 +51,7 @@
     .topbar { display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap; margin:42px auto 28px; }
     .partners-title { text-align:center; margin-top:10px; margin-bottom:14px; color:var(--gold); letter-spacing:.24em; text-transform:uppercase; font-size:.72rem; padding-left:.24em; }
     .filters { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
-    .filter-btn,.cta-link { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.02); color:var(--muted); border-radius:999px; padding:11px 18px; font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; transition:.25s ease; text-decoration:none; font-family:'Manrope', sans-serif; display:inline-flex; align-items:center; justify-content:center; }
+    .filter-btn,.cta-link { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.02); color:var(--muted); border-radius:999px; padding:11px 18px; font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; transition:.25s ease; text-decoration:none; font-family:"Manrope", sans-serif; display:inline-flex; align-items:center; justify-content:center; }
     .filter-btn:hover,.filter-btn.active,.cta-link:hover { color:var(--gold); border-color:rgba(201,168,76,.28); background:rgba(201,168,76,.07); transform:translateY(-1px); }
     .gallery { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:24px; padding:8px 0 90px; }
     .card { position:relative; border-radius:var(--radius); overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)); border:1px solid var(--card-border); box-shadow:var(--shadow); transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease; cursor:pointer; }
@@ -65,9 +65,9 @@
     .unique { left:16px; top:16px; color:rgba(255,255,255,.78); background:rgba(0,0,0,.34); border:1px solid rgba(255,255,255,.08); padding:7px 10px; }
     .category-pill { left:16px; top:56px; color:#f3e7bc; background:rgba(201,168,76,.12); border:1px solid rgba(201,168,76,.2); padding:7px 10px; white-space:nowrap; z-index:3; max-width:calc(100% - 32px); }
     .card-info { position:absolute; left:0; right:0; bottom:0; z-index:2; padding:22px 20px 20px; }
-    .card-name { font-family:'Cormorant Garamond', serif; font-size:2rem; line-height:.95; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px; text-shadow:0 8px 18px rgba(0,0,0,.45); }
+    .card-name { font-family:"Cormorant Garamond", serif; font-size:2rem; line-height:.95; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px; text-shadow:0 8px 18px rgba(0,0,0,.45); }
     .card-bottom { display:flex; justify-content:space-between; gap:12px; align-items:end; }
-    .price { font-family:'Cormorant Garamond', serif; font-size:1.45rem; color:var(--gold); }
+    .price { font-family:"Cormorant Garamond", serif; font-size:1.45rem; color:var(--gold); }
     .size { font-size:.72rem; color:rgba(255,255,255,.56); letter-spacing:.2em; text-transform:uppercase; text-align:right; }
     footer { padding:10px 0 56px; text-align:center; color:var(--muted); }
     .footer-line { width:42px; height:1px; background:rgba(201,168,76,.24); margin:0 auto 18px; }
@@ -80,19 +80,20 @@
     .modal-visual { position:relative; background:#111; min-height:320px; overflow:hidden; }
     .modal-visual img { width:100%; height:100%; object-fit:cover; display:block; }
     .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.42); color:#fff; font-size:1.15rem; cursor:pointer; z-index:3; }
-    .carousel-btn.prev { left:16px; } .carousel-btn.next { right:16px; }
+    .carousel-btn.prev { left:16px; }
+    .carousel-btn.next { right:16px; }
     .carousel-counter { position:absolute; left:50%; bottom:16px; transform:translateX(-50%); background:rgba(0,0,0,.42); border:1px solid rgba(255,255,255,.08); color:rgba(255,255,255,.9); border-radius:999px; padding:8px 12px; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; z-index:3; }
     .modal-content { padding:38px 34px 34px; display:flex; flex-direction:column; justify-content:center; }
     .modal-kicker { color:var(--gold); text-transform:uppercase; letter-spacing:.28em; font-size:.68rem; margin-bottom:14px; }
-    .modal-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.2rem, 4vw, 3.5rem); line-height:.95; letter-spacing:.06em; text-transform:uppercase; margin-bottom:16px; }
+    .modal-title { font-family:"Cormorant Garamond", serif; font-size:clamp(2.2rem, 4vw, 3.5rem); line-height:.95; letter-spacing:.06em; text-transform:uppercase; margin-bottom:16px; }
     .modal-desc { color:#cacaca; line-height:1.8; font-size:.96rem; margin-bottom:24px; }
     .modal-meta { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; margin-bottom:26px; }
     .meta-box { border:1px solid rgba(255,255,255,.07); background:rgba(255,255,255,.02); border-radius:16px; padding:16px 18px; }
     .meta-label { font-size:.68rem; text-transform:uppercase; letter-spacing:.22em; color:var(--muted); margin-bottom:8px; }
     .meta-value { color:white; font-size:1rem; line-height:1.5; }
-    .meta-value.price-value { color:var(--gold); font-family:'Cormorant Garamond', serif; font-size:1.6rem; }
+    .meta-value.price-value { color:var(--gold); font-family:"Cormorant Garamond", serif; font-size:1.6rem; }
     .modal-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:4px; }
-    .btn { appearance:none; border:none; text-decoration:none; border-radius:999px; padding:14px 20px; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; cursor:pointer; font-family:'Manrope', sans-serif; display:inline-flex; align-items:center; justify-content:center; }
+    .btn { appearance:none; border:none; text-decoration:none; border-radius:999px; padding:14px 20px; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; cursor:pointer; font-family:"Manrope", sans-serif; display:inline-flex; align-items:center; justify-content:center; }
     .btn-primary { background:linear-gradient(180deg, #ead9a3 0%, var(--gold) 68%, #9a7524 100%); color:#17120a; font-weight:700; }
     .btn-secondary { color:#f3f3f3; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); }
     @media (max-width:980px) { .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } .modal-grid { grid-template-columns:1fr; } .modal-visual { max-height:52vh; } }
@@ -106,11 +107,11 @@
     <header>
       <div class="eyebrow">LZ Signature</div>
       <h1 class="hero-title">Designer</h1>
-      <div class="divider"><span class="line"></span><span class="star">✦</span><span class="line"></span></div>
+      <div class="divider"><span class="line"></span><span class="star">+</span><span class="line"></span></div>
       <p class="subtitle">Custom pieces<br>Exclusive designs</p>
       <div class="logo-wrap"><img src="logo-lz.jpg" alt="Logo LZ Signature"></div>
       <div class="submark">Lookbook</div>
-      <p class="intro">Une sélection de pièces customisées à la main, pensées comme des créations uniques. Blazers et casquettes se rencontrent ici dans un univers élégant, affirmé et singulier.</p>
+      <p class="intro">Une selection de pieces customisees a la main, pensees comme des creations uniques. Blazers et casquettes se rencontrent ici dans un univers elegant, affirme et singulier.</p>
     </header>
     <div class="topbar">
       <div class="filters" id="filters"></div>
@@ -131,16 +132,16 @@
   </div>
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
+      <button class="modal-close" id="modalClose" aria-label="Fermer">x</button>
       <div class="modal-grid">
-        <div class="modal-visual" id="modalVisual">
-          <button class="carousel-btn prev" id="prevImage" aria-label="Image précédente">←</button>
+        <div class="modal-visual">
+          <button class="carousel-btn prev" id="prevImage" aria-label="Image precedente"><</button>
           <img id="modalImage" src="" alt="">
-          <button class="carousel-btn next" id="nextImage" aria-label="Image suivante">→</button>
-          <div class="carousel-counter" id="carouselCounter">1 / 2</div>
+          <button class="carousel-btn next" id="nextImage" aria-label="Image suivante">></button>
+          <div class="carousel-counter" id="carouselCounter">1 / 1</div>
         </div>
         <div class="modal-content">
-          <div class="modal-kicker" id="modalKicker">Pièce unique</div>
+          <div class="modal-kicker" id="modalKicker">Piece unique</div>
           <h2 class="modal-title" id="modal-title">Nom</h2>
           <p class="modal-desc" id="modalDesc"></p>
           <div class="modal-meta">
@@ -161,7 +162,9 @@
   <script>
     const INSTAGRAM_URL = "https://www.instagram.com/lz_blazers/";
     const VINTED_URL = "https://www.vinted.fr/member/27532797-lzblazers?utm_source=ig&utm_medium=social&utm_content=link_in_bio";
-    const items = [{"slug": "amour", "nom": "Amour", "prix": null, "taille": "XS", "images": ["amour-face.jpg", "amour-dos.jpg"], "disponible": true, "pointVente": "Auchan La Seyne - La Boutique des Artisans • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Auchan La Seyne - La Boutique des Artisans • Vinted. Taille : XS.", "categorie": "blazers"}, {"slug": "amethyste", "nom": "Améthyste", "prix": null, "taille": "M", "images": ["amethyste-face.jpg", "amethyste-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : M.", "categorie": "blazers"}, {"slug": "art", "nom": "ART", "prix": null, "taille": "S/M", "images": ["art-face.jpg", "art-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : S/M.", "categorie": "blazers"}, {"slug": "bcbg", "nom": "BCBG", "prix": null, "taille": "XS", "images": ["bcbg-face.jpg", "bcbg-dos.jpg"], "disponible": true, "pointVente": "K Concept Store Bandol • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : K Concept Store Bandol • Vinted. Taille : XS.", "categorie": "blazers"}, {"slug": "brille", "nom": "Brille sans excuse", "prix": null, "taille": "M", "images": ["brille-face.jpg", "brille-dos.jpg"], "disponible": true, "pointVente": "Auchan La Seyne - La Boutique des Artisans • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Auchan La Seyne - La Boutique des Artisans • Vinted. Taille : M.", "categorie": "blazers"}, {"slug": "broderie", "nom": "Broderie", "prix": null, "taille": "L", "images": ["broderie-face.jpg", "broderie-dos.jpg"], "disponible": true, "pointVente": "Mush Sanary • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Mush Sanary • Vinted. Taille : L.", "categorie": "blazers"}, {"slug": "chance", "nom": "Chance", "prix": null, "taille": "M", "images": ["chance-face.jpg", "chance-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : M.", "categorie": "blazers"}, {"slug": "cute", "nom": "Cute", "prix": null, "taille": "xs", "images": ["cute-face.jpg", "cute-dos.jpg"], "disponible": true, "pointVente": "Lovely Bandol • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Lovely Bandol • Vinted. Taille : xs.", "categorie": "blazers"}, {"slug": "celeste", "nom": "Céleste", "prix": null, "taille": "M", "images": ["celeste-face.jpg", "celeste-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : M.", "categorie": "blazers"}, {"slug": "dollars", "nom": "Dollars", "prix": null, "taille": "XL/XXL", "images": ["dollars-face.jpg", "dollars-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : XL/XXL.", "categorie": "blazers"}, {"slug": "desir", "nom": "Désir", "prix": null, "taille": "unique", "images": ["desir-face.jpg", "desir-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : unique.", "categorie": "blazers"}, {"slug": "emera", "nom": "Emera", "prix": null, "taille": "S", "images": ["emera-face.jpg", "emera-dos.jpg"], "disponible": true, "pointVente": "K Concept Store Bandol • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : K Concept Store Bandol • Vinted. Taille : S.", "categorie": "blazers"}, {"slug": "falena", "nom": "Falena", "prix": null, "taille": "xs", "images": ["falena-face.jpg", "falena-dos.jpg"], "disponible": true, "pointVente": "K Concept Store Bandol • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : K Concept Store Bandol • Vinted. Taille : xs.", "categorie": "blazers"}, {"slug": "flower", "nom": "Flower", "prix": null, "taille": "S", "images": ["flower-face.jpg", "flower-dos.jpg"], "disponible": true, "pointVente": "Mush Sanary • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Mush Sanary • Vinted. Taille : S.", "categorie": "blazers"}, {"slug": "futura", "nom": "Futura", "prix": null, "taille": "S", "images": ["futura-face.jpg", "futura-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : S.", "categorie": "blazers"}, {"slug": "glam", "nom": "Glam", "prix": null, "taille": "S/M", "images": ["glam-face.jpg", "glam-dos.jpg"], "disponible": true, "pointVente": "Mush Sanary • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Mush Sanary • Vinted. Taille : S/M.", "categorie": "blazers"}, {"slug": "la-vie-en-rose", "nom": "La vie en rose", "prix": null, "taille": "M", "images": ["la-vie-en-rose-face.jpg", "la-vie-en-rose-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : M.", "categorie": "blazers"}, {"slug": "marylin", "nom": "Marylin", "prix": null, "taille": "M/L", "images": ["marylin-face.jpg", "marylin-dos.jpg"], "disponible": true, "pointVente": "Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Vinted. Taille : M/L.", "categorie": "blazers"}, {"slug": "midnight", "nom": "Midnight", "prix": null, "taille": "S", "images": ["midnight-face.jpg", "midnight-dos.jpg"], "disponible": true, "pointVente": "Auchan La Seyne - La Boutique des Artisans • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Auchan La Seyne - La Boutique des Artisans • Vinted. Taille : S.", "categorie": "blazers"}, {"slug": "smoke", "nom": "Nom : Smoke", "prix": null, "taille": "à confirmer", "images": ["smoke-face.jpg", "smoke-dos.jpg"], "disponible": true, "pointVente": "À confirmer", "description": "Blazer customisé à la main, pensé comme une pièce unique. Taille : à confirmer.", "categorie": "blazers"}, {"slug": "standards", "nom": "Nom : Standards", "prix": null, "taille": "à confirmer", "images": ["standards-face.jpg", "standards-dos.jpg"], "disponible": true, "pointVente": "À confirmer", "description": "Blazer customisé à la main, pensé comme une pièce unique. Taille : à confirmer.", "categorie": "blazers"}, {"slug": "ose", "nom": "OSE!", "prix": null, "taille": "M", "images": ["ose-face.jpg", "ose-dos.jpg"], "disponible": true, "pointVente": "Auchan La Seyne - La Boutique des Artisans • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Auchan La Seyne - La Boutique des Artisans • Vinted. Taille : M.", "categorie": "blazers"}, {"slug": "panthere", "nom": "Panthère or", "prix": null, "taille": "M", "images": ["panthere-face.jpg", "panthere-dos.jpg"], "disponible": true, "pointVente": "Lovely Bandol • Vinted", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Lovely Bandol • Vinted. Taille : M.", "categorie": "blazers"}, {"slug": "perles", "nom": "Perles", "prix": null, "taille": "M", "images": ["perles-face.jpg", "perles-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : M.", "categorie": "blazers"}, {"slug": "phenix", "nom": "Phénix", "prix": null, "taille": "M", "images": ["phenix-face.jpg", "phenix-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : M.", "categorie": "blazers"}, {"slug": "queen", "nom": "Queen", "prix": null, "taille": "XL/XXL oversize", "images": ["queen-face.jpg", "queen-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : XL/XXL oversize.", "categorie": "blazers"}, {"slug": "revolte", "nom": "Révolte", "prix": null, "taille": "XL", "images": ["revolte-face.jpg", "revolte-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : XL.", "categorie": "blazers"}, {"slug": "v13", "nom": "V13", "prix": null, "taille": "S", "images": ["v13-face.jpg", "v13-dos.jpg"], "disponible": true, "pointVente": "Auchan La Seyne - La Boutique des Artisans", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : Auchan La Seyne - La Boutique des Artisans. Taille : S.", "categorie": "blazers"}, {"slug": "venins", "nom": "Venins", "prix": null, "taille": "M", "images": ["venins-face.jpg", "venins-dos.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Blazer customisé à la main, pensé comme une pièce unique. Point de vente : On Stage 83. Taille : M.", "categorie": "blazers"}, {"slug": "girly", "nom": "Girly", "prix": null, "taille": "À confirmer", "images": ["girly-face.jpg", "girly-dos.jpg"], "disponible": true, "pointVente": "Auchan La Seyne - La Boutique des Artisans • Vinted", "description": "Casquette customisée à la main, pensée comme une pièce unique. Point de vente : Auchan La Seyne - La Boutique des Artisans • Vinted.", "categorie": "casquettes"}, {"slug": "glint", "nom": "Glint", "prix": null, "taille": "À confirmer", "images": ["glint-face.jpg", "glint-dos.jpg"], "disponible": true, "pointVente": "Auchan La Seyne - La Boutique des Artisans • Vinted", "description": "Casquette customisée à la main, pensée comme une pièce unique. Point de vente : Auchan La Seyne - La Boutique des Artisans • Vinted.", "categorie": "casquettes"}, {"slug": "kiss", "nom": "Kiss", "prix": null, "taille": "À confirmer", "images": ["kiss-face.jpg", "kiss-dos.jpg"], "disponible": true, "pointVente": "Auchan La Seyne - La Boutique des Artisans • Vinted", "description": "Casquette customisée à la main, pensée comme une pièce unique. Point de vente : Auchan La Seyne - La Boutique des Artisans • Vinted.", "categorie": "casquettes"}, {"slug": "teddybear", "nom": "Lovely", "prix": null, "taille": "À confirmer", "images": ["teddybear-face.jpg", "teddybear-dos.jpg"], "disponible": true, "pointVente": "Lovely Bandol • Vinted", "description": "Casquette customisée à la main, pensée comme une pièce unique. Point de vente : Lovely Bandol • Vinted.", "categorie": "casquettes"}, {"slug": "mykonos", "nom": "Mykonos", "prix": null, "taille": "À confirmer", "images": ["mykonos-face.jpg", "mykonos-dos.jpg"], "disponible": true, "pointVente": "Lovely Bandol • Vinted", "description": "Casquette customisée à la main, pensée comme une pièce unique. Point de vente : Lovely Bandol • Vinted.", "categorie": "casquettes"}, {"slug": "pacha", "nom": "Pacha", "prix": null, "taille": "À confirmer", "images": ["pacha-face.jpg", "pacha-dos.jpg"], "disponible": true, "pointVente": "Lovely Bandol • Vinted", "description": "Casquette customisée à la main, pensée comme une pièce unique. Point de vente : Lovely Bandol • Vinted.", "categorie": "casquettes"}, {"slug": "volte", "nom": "Volte", "prix": null, "taille": "réglable", "images": ["volte-face.jpg", "volte-profil.jpg"], "disponible": true, "pointVente": "On Stage 83", "description": "Casquette customisée à la main, pensée comme une pièce unique. Point de vente : On Stage 83. Taille : réglable.", "categorie": "casquettes"}];
+    const CATALOGUE_API_URL = "https://script.google.com/macros/s/AKfycbxuX13tHMVudbz03uytAQMLHVTwxWxg9xZVW05eP0l3-JKH2cs2guC_lCIniQFKXNmH/exec";
+    const FALLBACK_ITEMS = [];
+
     const gallery = document.getElementById("gallery");
     const filtersContainer = document.getElementById("filters");
     const modal = document.getElementById("modal");
@@ -173,81 +176,202 @@
     const carouselCounter = document.getElementById("carouselCounter");
     const prevImageBtn = document.getElementById("prevImage");
     const nextImageBtn = document.getElementById("nextImage");
-    let filtreActif = "tous";
-    let currentItem = null;
-    let currentImageIndex = 0;
-    function formatPrice(prix) {
-      return (prix === null || prix === undefined || prix === "" || prix === 0) ? "Prix sur demande" : `${prix} €`;
-    }
+
     const categoryLabels = {
       blazers: "Blazer",
       casquettes: "Casquette",
       cravattes: "Cravatte"
     };
-    const filterOptions = [
-      { id: "tous", label: "Tous" },
-      { id: "blazers", label: "Blazers" },
-      { id: "casquettes", label: "Casquettes" },
-      { id: "cravattes", label: "Cravattes" }
-    ];
-    function formatCategory(cat) { return categoryLabels[cat] || "Piece"; }
+
+    let items = [...FALLBACK_ITEMS];
+    let filtreActif = "tous";
+    let currentItem = null;
+    let currentImageIndex = 0;
+
+    function formatPrice(prix) {
+      return (prix === null || prix === undefined || prix === "" || prix === 0) ? "Prix sur demande" : `${prix} EUR`;
+    }
+
+    function formatCategory(cat) {
+      return categoryLabels[cat] || "Piece";
+    }
+
+    function normalizeBoolean(value) {
+      if (typeof value === "boolean") return value;
+      const normalized = String(value || "").trim().toLowerCase();
+      return ["oui", "true", "1", "disponible", "available", "en stock"].includes(normalized);
+    }
+
+    function normalizePrice(value) {
+      if (value === null || value === undefined || value === "") return null;
+      const numeric = Number(String(value).replace(",", ".").replace(/[^\d.]/g, ""));
+      return Number.isFinite(numeric) && numeric > 0 ? numeric : null;
+    }
+
+    function slugify(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function normalizeImages(raw) {
+      if (Array.isArray(raw?.images)) return raw.images.filter(Boolean);
+      return ["image_1", "image_2", "image_3", "image_4", "image_5"]
+        .map((key) => raw?.[key])
+        .filter(Boolean);
+    }
+
+    function normalizeItem(raw, index = 0) {
+      const categorie = String(raw.categorie || "blazers").trim().toLowerCase();
+      const images = normalizeImages(raw);
+      const pointVente = raw.pointVente || raw.point_vente || "A confirmer";
+      const taille = raw.taille ? String(raw.taille).trim() : (categorie === "casquettes" ? "Reglable" : "A confirmer");
+      return {
+        slug: raw.slug || slugify(raw.nom || `article-${index + 1}`),
+        nom: raw.nom || raw.name || `Article ${index + 1}`,
+        prix: normalizePrice(raw.prix),
+        taille,
+        images: images.length ? images : ["logo-lz.jpg"],
+        disponible: raw.disponible === undefined ? true : normalizeBoolean(raw.disponible),
+        pointVente,
+        description: raw.description || `${categorie === "casquettes" ? "Casquette" : "Blazer"} customise a la main.`,
+        categorie,
+        instagramUrl: raw.instagramUrl || raw.instagram_url || INSTAGRAM_URL,
+        vintedUrl: raw.vintedUrl || raw.vinted_url || VINTED_URL
+      };
+    }
+
+    async function loadRemoteItems() {
+      const separator = CATALOGUE_API_URL.includes("?") ? "&" : "?";
+      const response = await fetch(`${CATALOGUE_API_URL}${separator}ts=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Catalogue distant inaccessible (${response.status})`);
+      const payload = await response.json();
+      const remoteItems = Array.isArray(payload) ? payload : payload.items;
+      if (!Array.isArray(remoteItems) || !remoteItems.length) throw new Error("Le catalogue distant est vide.");
+      return remoteItems.map((item, index) => normalizeItem(item, index));
+    }
+
     function createCard(item) {
+      const sizeText = item.categorie === "casquettes" ? item.taille : `Taille ${item.taille}`;
       return `
         <article class="card" data-slug="${item.slug}">
           <div class="card-image">
-            <span class="unique">Pièce unique</span>
-            <span class="badge">Disponible</span>
+            <span class="unique">Piece unique</span>
+            <span class="badge">${item.disponible === false ? "Indisponible" : "Disponible"}</span>
             <span class="category-pill">${formatCategory(item.categorie)}</span>
-            <img src="${(item.images && item.images.length ? item.images[0] : "logo-lz.jpg")}" alt="${item.nom}" loading="lazy">
+            <img src="${item.images[0] || "logo-lz.jpg"}" alt="${item.nom}" loading="lazy">
           </div>
           <div class="card-info">
             <div class="card-name">${item.nom}</div>
             <div class="card-bottom">
               <div class="price">${formatPrice(item.prix)}</div>
-              <div class="size">${item.categorie === "casquettes" ? "Réglable" : (item.taille === "Réglable" ? "Réglable" : "Taille " + item.taille)}</div>
+              <div class="size">${sizeText}</div>
             </div>
           </div>
         </article>`;
     }
+
     function renderGallery() {
       let filtered = items;
-      if (filtreActif !== 'tous') filtered = items.filter(i => i.categorie === filtreActif);
-      gallery.innerHTML = filtered.map(createCard).join('');
-      document.querySelectorAll('.card').forEach(card => card.addEventListener('click', () => openModal(items.find(i => i.slug === card.dataset.slug))));
+      if (filtreActif !== "tous") filtered = items.filter((item) => item.categorie === filtreActif);
+      gallery.innerHTML = filtered.map(createCard).join("");
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", () => openModal(items.find((item) => item.slug === card.dataset.slug)));
+      });
     }
+
     function renderFilters() {
-      filtersContainer.innerHTML = filterOptions.map(f => `<button class="filter-btn ${filtreActif===f.id?'active':''}" data-filter="${f.id}">${f.label}</button>`).join('');
-      filtersContainer.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { filtreActif = btn.dataset.filter; renderFilters(); renderGallery(); }));
+      const options = [
+        { id: "tous", label: "Tous" },
+        { id: "blazers", label: "Blazers" },
+        { id: "casquettes", label: "Casquettes" }
+      ];
+      filtersContainer.innerHTML = options.map((f) => `<button class="filter-btn ${filtreActif === f.id ? "active" : ""}" data-filter="${f.id}">${f.label}</button>`).join("");
+      filtersContainer.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filtreActif = btn.dataset.filter;
+          renderFilters();
+          renderGallery();
+        });
+      });
     }
+
     function updateModalImage() {
       if (!currentItem) return;
       modalImage.src = currentItem.images[currentImageIndex];
-      modalImage.alt = `${currentItem.nom} — vue ${currentImageIndex + 1}`;
+      modalImage.alt = `${currentItem.nom} - vue ${currentImageIndex + 1}`;
       carouselCounter.textContent = `${currentImageIndex + 1} / ${currentItem.images.length}`;
       const showNav = currentItem.images.length > 1;
-      prevImageBtn.style.display = showNav ? 'inline-flex' : 'none';
-      nextImageBtn.style.display = showNav ? 'inline-flex' : 'none';
-      carouselCounter.style.display = showNav ? 'block' : 'none';
+      prevImageBtn.style.display = showNav ? "inline-flex" : "none";
+      nextImageBtn.style.display = showNav ? "inline-flex" : "none";
+      carouselCounter.style.display = showNav ? "block" : "none";
     }
-    function nextImage() { if (!currentItem || currentItem.images.length < 2) return; currentImageIndex = (currentImageIndex + 1) % currentItem.images.length; updateModalImage(); }
-    function prevImage() { if (!currentItem || currentItem.images.length < 2) return; currentImageIndex = (currentImageIndex - 1 + currentItem.images.length) % currentItem.images.length; updateModalImage(); }
-    function openModal(item) {
-      currentItem = item; currentImageIndex = 0;
-      document.getElementById('modal-title').textContent = item.nom;
-      document.getElementById('modalDesc').textContent = item.description;
-      document.getElementById('modalPrice').textContent = formatPrice(item.prix);
-      document.getElementById('modalSize').textContent = item.taille;
-      document.getElementById('modalStatus').textContent = 'Disponible';
-      document.getElementById('modalStyle').textContent = item.pointVente;
-      document.getElementById('modalKicker').textContent = `${formatCategory(item.categorie)} unique disponible`;
+
+    function nextImage() {
+      if (!currentItem || currentItem.images.length < 2) return;
+      currentImageIndex = (currentImageIndex + 1) % currentItem.images.length;
       updateModalImage();
-      modalInstagram.href = INSTAGRAM_URL; modalVinted.href = VINTED_URL; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
     }
-    function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; currentItem=null; currentImageIndex=0; }
-    modalClose.addEventListener('click', closeModal); modalClose2.addEventListener('click', closeModal); prevImageBtn.addEventListener('click', prevImage); nextImageBtn.addEventListener('click', nextImage);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (!modal.classList.contains('open')) return; if (e.key==='Escape') closeModal(); if (e.key==='ArrowRight') nextImage(); if (e.key==='ArrowLeft') prevImage(); });
-    renderFilters(); renderGallery();
+
+    function prevImage() {
+      if (!currentItem || currentItem.images.length < 2) return;
+      currentImageIndex = (currentImageIndex - 1 + currentItem.images.length) % currentItem.images.length;
+      updateModalImage();
+    }
+
+    function openModal(item) {
+      currentItem = item;
+      currentImageIndex = 0;
+      document.getElementById("modal-title").textContent = item.nom;
+      document.getElementById("modalDesc").textContent = item.description;
+      document.getElementById("modalPrice").textContent = formatPrice(item.prix);
+      document.getElementById("modalSize").textContent = item.taille;
+      document.getElementById("modalStatus").textContent = item.disponible === false ? "Indisponible" : "Disponible";
+      document.getElementById("modalStyle").textContent = item.pointVente;
+      document.getElementById("modalKicker").textContent = `${formatCategory(item.categorie)} unique`;
+      modalInstagram.href = item.instagramUrl || INSTAGRAM_URL;
+      modalVinted.href = item.vintedUrl || VINTED_URL;
+      updateModalImage();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      currentItem = null;
+      currentImageIndex = 0;
+    }
+
+    async function initCatalogue() {
+      try {
+        items = await loadRemoteItems();
+      } catch (error) {
+        console.warn("Chargement du catalogue distant impossible.", error);
+        items = [...FALLBACK_ITEMS];
+      }
+      renderFilters();
+      renderGallery();
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modalClose2.addEventListener("click", closeModal);
+    prevImageBtn.addEventListener("click", prevImage);
+    nextImageBtn.addEventListener("click", nextImage);
+    modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+    document.addEventListener("keydown", (event) => {
+      if (!modal.classList.contains("open")) return;
+      if (event.key === "Escape") closeModal();
+      if (event.key === "ArrowRight") nextImage();
+      if (event.key === "ArrowLeft") prevImage();
+    });
+
+    initCatalogue();
   </script>
 </body>
 </html>
