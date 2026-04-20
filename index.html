@@ -333,11 +333,16 @@
       right: 16px;
       width: 42px;
       height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.1);
       background: rgba(255,255,255,.04);
       color: white;
-      font-size: 1rem;
+      font-size: 1.12rem;
+      line-height: 1;
+      font-weight: 500;
       cursor: pointer;
       z-index: 10;
     }
@@ -371,11 +376,16 @@
       transform: translateY(-50%);
       width: 48px;
       height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.1);
       background: rgba(0,0,0,.42);
       color: #fff;
-      font-size: 1.15rem;
+      font-size: 1.4rem;
+      line-height: 1;
       cursor: pointer;
       z-index: 3;
     }
@@ -524,43 +534,64 @@
       .price { font-size: 1.24rem; max-width: 9.5ch; }
       .size { font-size: 0.7rem; }
       .filter-btn,.cta-link { font-size: 0.68rem; padding: 10px 14px; letter-spacing: 0.16em; }
-      .modal { padding: 10px; }
-      .modal-panel { width: min(100%, 420px); max-height: 94vh; border-radius: 22px; }
-      .modal-close { top: 12px; right: 12px; }
+      .modal { padding: 2px; }
+      .modal-panel { width: min(100%, 440px); max-height: 98vh; border-radius: 20px; }
+      .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.35rem;
+        background: rgba(10,10,10,.64);
+        border-color: rgba(255,255,255,.16);
+        box-shadow: 0 10px 24px rgba(0,0,0,.24);
+        z-index: 6;
+      }
       .modal-grid { min-height: auto; }
       .modal-visual {
         min-height: unset;
-        height: min(52vh, 460px);
+        height: min(64vh, 640px);
         max-height: none;
-        padding: 8px 8px 42px;
+        padding: 0;
         align-items: center;
         justify-content: center;
       }
       .modal-visual img {
         object-fit: contain;
         object-position: center center;
-        border-radius: 12px;
+        border-radius: 0;
       }
       .carousel-btn {
-        width: 42px;
-        height: 42px;
-        font-size: 1rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1.28rem;
+        background: rgba(8,8,8,.58);
+        border-color: rgba(255,255,255,.14);
+        backdrop-filter: blur(10px);
+        z-index: 5;
       }
-      .carousel-btn.prev { left: 10px; }
-      .carousel-btn.next { right: 10px; }
-      .carousel-counter { bottom: 10px; }
-      .modal-content { padding: 16px 14px 16px; }
-      .modal-kicker { margin-bottom: 12px; font-size: 0.62rem; letter-spacing: 0.24em; }
-      .modal-title { font-size: clamp(2.1rem, 11vw, 2.9rem); margin-bottom: 10px; }
-      .modal-desc { font-size: 0.9rem; line-height: 1.65; margin-bottom: 14px; }
+      .carousel-btn.prev { left: 12px; }
+      .carousel-btn.next { right: 12px; }
+      .carousel-counter {
+        bottom: 14px;
+        padding: 7px 12px;
+        font-size: 0.64rem;
+        background: rgba(8,8,8,.62);
+        border-color: rgba(255,255,255,.12);
+        z-index: 5;
+      }
+      .modal-content { padding: 14px 12px 14px; }
+      .modal-kicker { margin-bottom: 10px; font-size: 0.6rem; letter-spacing: 0.24em; }
+      .modal-title { font-size: clamp(2rem, 10.5vw, 2.75rem); margin-bottom: 8px; }
+      .modal-desc { font-size: 0.88rem; line-height: 1.58; margin-bottom: 12px; }
       .modal-meta {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-        margin-bottom: 14px;
+        gap: 7px;
+        margin-bottom: 12px;
       }
       .meta-box {
-        min-height: 76px;
-        padding: 10px 8px;
+        min-height: 72px;
+        padding: 9px 8px;
         border-radius: 16px;
         gap: 4px;
       }
@@ -571,7 +602,7 @@
         max-width: 100%;
       }
       .meta-value.price-value { font-size: 1.28rem; }
-      .modal-actions { gap: 8px; }
+      .modal-actions { gap: 7px; }
       .modal-actions .btn { flex: 1 1 100%; }
     }
   </style>
@@ -609,12 +640,12 @@
 
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" id="modalClose" aria-label="Fermer">x</button>
+      <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
       <div class="modal-grid">
         <div class="modal-visual">
-          <button class="carousel-btn prev" id="prevImage" aria-label="Image precedente"><</button>
+          <button class="carousel-btn prev" id="prevImage" aria-label="Image precedente">&#8249;</button>
           <img id="modalImage" src="" alt="">
-          <button class="carousel-btn next" id="nextImage" aria-label="Image suivante">></button>
+          <button class="carousel-btn next" id="nextImage" aria-label="Image suivante">&#8250;</button>
           <div class="carousel-counter" id="carouselCounter">1 / 1</div>
         </div>
         <div class="modal-content">
