@@ -17,7 +17,7 @@
       --shadow: 0 20px 60px rgba(0,0,0,0.45);
       --radius: 18px;
     }
-    * { box-sizing: border-box; margin:0; padding:0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       min-height: 100vh;
       font-family: "Manrope", sans-serif;
@@ -26,78 +26,502 @@
         radial-gradient(circle at top left, rgba(201,168,76,0.10), transparent 28%),
         radial-gradient(circle at bottom right, rgba(201,168,76,0.08), transparent 26%),
         linear-gradient(180deg, #060606 0%, #0a0a0a 40%, #080808 100%);
-      overflow-x:hidden;
+      overflow-x: hidden;
     }
     body::before {
-      content:""; position:fixed; inset:0; pointer-events:none; opacity:.035;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      z-index:1000;
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      z-index: 1000;
     }
-    .ambient { position:fixed; width:520px; height:520px; border-radius:50%; filter:blur(150px); pointer-events:none; opacity:.08; z-index:0; }
-    .ambient.one { top:-180px; left:-120px; background:var(--gold); }
-    .ambient.two { right:-180px; bottom:-180px; background:var(--gold-deep); }
-    .shell { position:relative; z-index:1; width:min(1180px, calc(100% - 32px)); margin:0 auto; }
-    header { text-align:center; padding:72px 0 26px; }
-    .eyebrow { font-size:.72rem; letter-spacing:.45em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
-    .hero-title { font-family:"Cormorant Garamond", serif; font-size:clamp(3rem, 6vw, 5.8rem); font-weight:500; line-height:.95; letter-spacing:.14em; text-indent:.14em; color:transparent; background:linear-gradient(180deg, #fffdf3 0%, var(--gold-soft) 32%, var(--gold) 68%, var(--gold-deep) 100%); -webkit-background-clip:text; background-clip:text; text-transform:uppercase; }
-    .divider { display:flex; align-items:center; justify-content:center; gap:12px; margin:18px 0; }
-    .divider .line { width:74px; height:1px; background:linear-gradient(90deg, transparent, rgba(201,168,76,0.9), transparent); }
-    .divider .star { color:var(--gold); font-size:.72rem; }
-    .subtitle { font-family:"Cormorant Garamond", serif; color:#e7dcc0; font-size:clamp(1.1rem, 2vw, 1.55rem); line-height:1.5; letter-spacing:.08em; }
-    .logo-wrap { display:flex; justify-content:center; margin:28px 0 10px; }
-    .logo-wrap img { width:min(210px, 44vw); height:auto; display:block; filter:drop-shadow(0 10px 28px rgba(201,168,76,0.12)); }
-    .submark,.section-title { font-size:.72rem; letter-spacing:.5em; text-transform:uppercase; color:rgba(201,168,76,.9); padding-left:.5em; }
-    .intro { max-width:720px; margin:30px auto 0; color:var(--muted); font-size:.95rem; line-height:1.8; padding:0 14px; }
-    .topbar { display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap; margin:42px auto 28px; }
-    .partners-title { text-align:center; margin-top:10px; margin-bottom:14px; color:var(--gold); letter-spacing:.24em; text-transform:uppercase; font-size:.72rem; padding-left:.24em; }
-    .filters { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
-    .filter-btn,.cta-link { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.02); color:var(--muted); border-radius:999px; padding:11px 18px; font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; cursor:pointer; transition:.25s ease; text-decoration:none; font-family:"Manrope", sans-serif; display:inline-flex; align-items:center; justify-content:center; }
-    .filter-btn:hover,.filter-btn.active,.cta-link:hover { color:var(--gold); border-color:rgba(201,168,76,.28); background:rgba(201,168,76,.07); transform:translateY(-1px); }
-    .gallery { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:24px; padding:8px 0 90px; }
-    .card { position:relative; border-radius:var(--radius); overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)); border:1px solid var(--card-border); box-shadow:var(--shadow); transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease; cursor:pointer; }
-    .card:hover { transform:translateY(-6px); border-color:rgba(201,168,76,.22); box-shadow:0 28px 80px rgba(0,0,0,.52); }
-    .card-image { position:relative; aspect-ratio:3/4; overflow:hidden; background:#121212; }
-    .card-image img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s ease; }
-    .card:hover .card-image img { transform:scale(1.05); }
-    .card-image::after { content:""; position:absolute; inset:auto 0 0 0; height:42%; background:linear-gradient(to top, rgba(7,7,7,.98), rgba(7,7,7,.58), transparent); pointer-events:none; }
-    .badge,.unique,.category-pill { position:absolute; z-index:2; border-radius:999px; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; backdrop-filter:blur(8px); }
-    .badge { top:16px; right:16px; padding:7px 12px; color:var(--gold); background:rgba(201,168,76,.12); border:1px solid rgba(201,168,76,.2); }
-    .unique { left:16px; top:16px; color:rgba(255,255,255,.78); background:rgba(0,0,0,.34); border:1px solid rgba(255,255,255,.08); padding:7px 10px; }
-    .category-pill { left:16px; top:56px; color:#f3e7bc; background:rgba(201,168,76,.12); border:1px solid rgba(201,168,76,.2); padding:7px 10px; white-space:nowrap; z-index:3; max-width:calc(100% - 32px); }
-    .card-info { position:absolute; left:0; right:0; bottom:0; z-index:2; padding:22px 20px 20px; }
-    .card-name { font-family:"Cormorant Garamond", serif; font-size:2rem; line-height:.95; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px; text-shadow:0 8px 18px rgba(0,0,0,.45); }
-    .card-bottom { display:flex; justify-content:space-between; gap:12px; align-items:end; }
-    .price { font-family:"Cormorant Garamond", serif; font-size:1.45rem; color:var(--gold); }
-    .size { font-size:.72rem; color:rgba(255,255,255,.56); letter-spacing:.2em; text-transform:uppercase; text-align:right; }
-    footer { padding:10px 0 56px; text-align:center; color:var(--muted); }
-    .footer-line { width:42px; height:1px; background:rgba(201,168,76,.24); margin:0 auto 18px; }
-    .footer-text { font-size:.68rem; letter-spacing:.36em; text-transform:uppercase; padding-left:.36em; }
-    .modal { position:fixed; inset:0; background:rgba(0,0,0,.76); backdrop-filter:blur(8px); display:none; align-items:center; justify-content:center; padding:18px; z-index:2000; }
-    .modal.open { display:flex; }
-    .modal-panel { width:min(1080px, 100%); max-height:92vh; overflow:auto; border-radius:24px; background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)), #0e0e0e; border:1px solid rgba(255,255,255,.07); box-shadow:0 30px 90px rgba(0,0,0,.65); position:relative; }
-    .modal-close { position:absolute; top:14px; right:14px; width:42px; height:42px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:white; font-size:1rem; cursor:pointer; z-index:10; }
-    .modal-grid { display:grid; grid-template-columns:1.06fr .94fr; min-height:560px; }
-    .modal-visual { position:relative; background:#111; min-height:320px; overflow:hidden; }
-    .modal-visual img { width:100%; height:100%; object-fit:cover; display:block; }
-    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.42); color:#fff; font-size:1.15rem; cursor:pointer; z-index:3; }
-    .carousel-btn.prev { left:16px; }
-    .carousel-btn.next { right:16px; }
-    .carousel-counter { position:absolute; left:50%; bottom:16px; transform:translateX(-50%); background:rgba(0,0,0,.42); border:1px solid rgba(255,255,255,.08); color:rgba(255,255,255,.9); border-radius:999px; padding:8px 12px; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; z-index:3; }
-    .modal-content { padding:38px 34px 34px; display:flex; flex-direction:column; justify-content:center; }
-    .modal-kicker { color:var(--gold); text-transform:uppercase; letter-spacing:.28em; font-size:.68rem; margin-bottom:14px; }
-    .modal-title { font-family:"Cormorant Garamond", serif; font-size:clamp(2.2rem, 4vw, 3.5rem); line-height:.95; letter-spacing:.06em; text-transform:uppercase; margin-bottom:16px; }
-    .modal-desc { color:#cacaca; line-height:1.8; font-size:.96rem; margin-bottom:24px; }
-    .modal-meta { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; margin-bottom:26px; }
-    .meta-box { border:1px solid rgba(255,255,255,.07); background:rgba(255,255,255,.02); border-radius:16px; padding:16px 18px; }
-    .meta-label { font-size:.68rem; text-transform:uppercase; letter-spacing:.22em; color:var(--muted); margin-bottom:8px; }
-    .meta-value { color:white; font-size:1rem; line-height:1.5; }
-    .meta-value.price-value { color:var(--gold); font-family:"Cormorant Garamond", serif; font-size:1.6rem; }
-    .modal-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:4px; }
-    .btn { appearance:none; border:none; text-decoration:none; border-radius:999px; padding:14px 20px; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; cursor:pointer; font-family:"Manrope", sans-serif; display:inline-flex; align-items:center; justify-content:center; }
-    .btn-primary { background:linear-gradient(180deg, #ead9a3 0%, var(--gold) 68%, #9a7524 100%); color:#17120a; font-weight:700; }
-    .btn-secondary { color:#f3f3f3; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); }
-    @media (max-width:980px) { .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } .modal-grid { grid-template-columns:1fr; } .modal-visual { max-height:52vh; } }
-    @media (max-width:640px) { header { padding-top:54px; } .shell { width:min(100% - 20px, 1180px); } .gallery { grid-template-columns:1fr; gap:18px; padding-bottom:64px; } .card-name { font-size:1.7rem; } .modal-content { padding:26px 18px 22px; } .modal-meta { grid-template-columns:1fr; } .filter-btn,.cta-link { font-size:.68rem; padding:10px 14px; letter-spacing:.16em; } }
+    .ambient {
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      filter: blur(150px);
+      pointer-events: none;
+      opacity: 0.08;
+      z-index: 0;
+    }
+    .ambient.one { top: -180px; left: -120px; background: var(--gold); }
+    .ambient.two { right: -180px; bottom: -180px; background: var(--gold-deep); }
+    .shell { position: relative; z-index: 1; width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    header { text-align: center; padding: 72px 0 26px; }
+    .eyebrow { font-size: 0.72rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: 0.14em;
+      text-indent: 0.14em;
+      color: transparent;
+      background: linear-gradient(180deg, #fffdf3 0%, var(--gold-soft) 32%, var(--gold) 68%, var(--gold-deep) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-transform: uppercase;
+    }
+    .divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 18px 0; }
+    .divider .line { width: 74px; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,0.9), transparent); }
+    .divider .star { color: var(--gold); font-size: 0.72rem; }
+    .subtitle {
+      font-family: "Cormorant Garamond", serif;
+      color: #e7dcc0;
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+    }
+    .logo-wrap { display: flex; justify-content: center; margin: 28px 0 10px; }
+    .logo-wrap img { width: min(210px, 44vw); height: auto; display: block; filter: drop-shadow(0 10px 28px rgba(201,168,76,0.12)); }
+    .submark,.section-title { font-size: 0.72rem; letter-spacing: 0.5em; text-transform: uppercase; color: rgba(201,168,76,.9); padding-left: 0.5em; }
+    .intro { max-width: 720px; margin: 30px auto 0; color: var(--muted); font-size: 0.95rem; line-height: 1.8; padding: 0 14px; }
+    .topbar { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; margin: 42px auto 28px; }
+    .partners-title { text-align: center; margin-top: 10px; margin-bottom: 14px; color: var(--gold); letter-spacing: 0.24em; text-transform: uppercase; font-size: 0.72rem; padding-left: 0.24em; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .filter-btn,.cta-link {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.25s ease;
+      text-decoration: none;
+      font-family: "Manrope", sans-serif;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .filter-btn:hover,.filter-btn.active,.cta-link:hover {
+      color: var(--gold);
+      border-color: rgba(201,168,76,.28);
+      background: rgba(201,168,76,.07);
+      transform: translateY(-1px);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      padding: 8px 0 90px;
+      min-height: 240px;
+    }
+    .card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,168,76,.22);
+      box-shadow: 0 28px 80px rgba(0,0,0,.52);
+    }
+    .card-image {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #121212;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      transition: transform .8s ease;
+    }
+    .card:hover .card-image img { transform: scale(1.05); }
+    .card-image::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 48%;
+      background: linear-gradient(to top, rgba(7,7,7,.98), rgba(7,7,7,.58), transparent);
+      pointer-events: none;
+    }
+    .badge,.unique,.category-pill {
+      position: absolute;
+      z-index: 2;
+      border-radius: 999px;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .badge {
+      top: 16px;
+      right: 16px;
+      padding: 7px 12px;
+      color: var(--gold);
+      background: rgba(201,168,76,.12);
+      border: 1px solid rgba(201,168,76,.2);
+    }
+    .badge.sold {
+      color: rgba(255,255,255,.84);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.12);
+    }
+    .unique {
+      left: 16px;
+      top: 16px;
+      color: rgba(255,255,255,.78);
+      background: rgba(0,0,0,.34);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 7px 10px;
+    }
+    .category-pill {
+      left: 16px;
+      top: 56px;
+      color: #f3e7bc;
+      background: rgba(201,168,76,.12);
+      border: 1px solid rgba(201,168,76,.2);
+      padding: 7px 10px;
+      white-space: nowrap;
+      max-width: calc(100% - 32px);
+    }
+    .card-info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 24px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+    .card-name {
+      width: 100%;
+      max-width: 92%;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.95rem, 3vw, 2.45rem);
+      line-height: 0.9;
+      letter-spacing: 0.085em;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 10px 22px rgba(0,0,0,.55);
+      text-wrap: balance;
+    }
+    .card-bottom {
+      width: min(100%, 292px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 12px 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(201,168,76,.16);
+    }
+    .card-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .card-meta.price-group { align-items: flex-start; text-align: left; }
+    .card-meta.size-group { align-items: flex-end; text-align: right; }
+    .card-meta-label {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,.52);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+    .price {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--gold);
+    }
+    .size {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,.72);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .loader-card {
+      min-height: 420px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+    .loader-media,
+    .loader-line {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,.05);
+    }
+    .loader-media { aspect-ratio: 3 / 4; }
+    .loader-line { height: 16px; border-radius: 999px; }
+    .loader-line.large { height: 28px; width: 72%; }
+    .loader-line.medium { width: 48%; }
+    .loader-line.small { width: 36%; }
+    .loader-card .loader-body { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+    .loader-media::after,
+    .loader-line::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      transform: translateX(-100%);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      animation: shimmer 1.4s infinite;
+    }
+    .loader-note,
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .empty-state {
+      padding: 56px 24px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+    }
+    footer { padding: 10px 0 56px; text-align: center; color: var(--muted); }
+    .footer-line { width: 42px; height: 1px; background: rgba(201,168,76,.24); margin: 0 auto 18px; }
+    .footer-text { font-size: 0.68rem; letter-spacing: 0.36em; text-transform: uppercase; padding-left: 0.36em; }
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.76);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 2000;
+    }
+    .modal.open { display: flex; }
+    .modal-panel {
+      width: min(1140px, 100%);
+      max-height: 92vh;
+      overflow: auto;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+        radial-gradient(circle at top right, rgba(201,168,76,.07), transparent 28%),
+        #0e0e0e;
+      border: 1px solid rgba(255,255,255,.07);
+      box-shadow: 0 30px 90px rgba(0,0,0,.65);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.04);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      min-height: 620px;
+      align-items: stretch;
+    }
+    .modal-visual {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at center, rgba(201,168,76,.16), transparent 46%),
+        linear-gradient(180deg, rgba(20,20,20,.96), rgba(12,12,12,1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(0,0,0,.42);
+      color: #fff;
+      font-size: 1.15rem;
+      cursor: pointer;
+      z-index: 3;
+    }
+    .carousel-btn.prev { left: 18px; }
+    .carousel-btn.next { right: 18px; }
+    .carousel-counter {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.42);
+      border: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.9);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      z-index: 3;
+    }
+    .modal-content {
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .modal-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.68rem;
+      margin-bottom: 18px;
+    }
+    .modal-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+      line-height: 0.9;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .modal-desc {
+      color: #cacaca;
+      line-height: 1.85;
+      font-size: 0.98rem;
+      margin-bottom: 30px;
+      max-width: 36ch;
+    }
+    .modal-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 16px 18px;
+      margin-bottom: 30px;
+      align-items: stretch;
+    }
+    .meta-box {
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.02);
+      border-radius: 18px;
+      padding: 18px 20px;
+      min-height: 108px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+    .meta-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      width: 100%;
+    }
+    .meta-value {
+      color: white;
+      font-size: 1rem;
+      line-height: 1.5;
+      width: 100%;
+      max-width: 18ch;
+      margin: 0 auto;
+    }
+    .meta-value.price-value { color: var(--gold); font-family: "Cormorant Garamond", serif; font-size: 1.8rem; }
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+      margin-top: 4px;
+    }
+    .btn {
+      appearance: none;
+      border: none;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: "Manrope", sans-serif;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+    }
+    .modal-actions .btn {
+      flex: 1 1 220px;
+      text-align: center;
+    }
+    .btn-primary { background: linear-gradient(180deg, #ead9a3 0%, var(--gold) 68%, #9a7524 100%); color: #17120a; font-weight: 700; }
+    .btn-secondary { color: #f3f3f3; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); }
+
+    @keyframes shimmer {
+      100% { transform: translateX(100%); }
+    }
+
+    @media (max-width: 980px) {
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .modal-grid { grid-template-columns: 1fr; }
+      .modal-visual { max-height: 54vh; min-height: 420px; }
+      .modal-content { padding: 34px 28px 30px; }
+      .modal-desc { max-width: none; }
+    }
+    @media (max-width: 640px) {
+      header { padding-top: 54px; }
+      .shell { width: min(100% - 20px, 1180px); }
+      .gallery { grid-template-columns: 1fr; gap: 18px; padding-bottom: 64px; }
+      .card-info { padding: 22px 18px 20px; gap: 12px; }
+      .card-name { font-size: 1.8rem; max-width: 100%; }
+      .card-bottom { width: 100%; gap: 10px 16px; padding-top: 10px; }
+      .card-meta-label { font-size: 0.54rem; }
+      .price { font-size: 1.32rem; }
+      .size { font-size: 0.72rem; }
+      .filter-btn,.cta-link { font-size: 0.68rem; padding: 10px 14px; letter-spacing: 0.16em; }
+      .modal { padding: 10px; }
+      .modal-panel { max-height: 94vh; border-radius: 22px; }
+      .modal-close { top: 12px; right: 12px; }
+      .modal-visual { min-height: 320px; max-height: 42vh; }
+      .modal-content { padding: 24px 18px 22px; }
+      .modal-title { font-size: clamp(2.2rem, 12vw, 3rem); margin-bottom: 16px; }
+      .modal-desc { font-size: 0.94rem; margin-bottom: 24px; }
+      .modal-meta { grid-template-columns: 1fr; gap: 12px; margin-bottom: 22px; }
+      .meta-box { min-height: auto; padding: 16px 16px; }
+      .modal-actions { gap: 10px; }
+      .modal-actions .btn { flex: 1 1 100%; }
+    }
   </style>
 </head>
 <body>
@@ -111,7 +535,7 @@
       <p class="subtitle">Custom pieces<br>Exclusive designs</p>
       <div class="logo-wrap"><img src="logo-lz.jpg" alt="Logo LZ Signature"></div>
       <div class="submark">Lookbook</div>
-      <p class="intro">Une selection de pieces customisees a la main, pensees comme des creations uniques. Blazers et casquettes se rencontrent ici dans un univers elegant, affirme et singulier.</p>
+      <p class="intro">Une selection de pieces customisees a la main, pensees comme des creations uniques. Blazers, casquettes et cravattes se rencontrent ici dans un univers elegant, affirme et singulier.</p>
     </header>
     <div class="topbar">
       <div class="filters" id="filters"></div>
@@ -127,9 +551,10 @@
         <a class="cta-link" href="https://www.instagram.com/onstage83official?igsh=MXg1dWk2aXFvbHNyZg==" target="_blank" rel="noopener noreferrer">On Stage 83</a>
       </div>
     </div>
-    <section class="gallery" id="gallery"></section>
+    <section class="gallery" id="gallery" aria-live="polite"></section>
     <footer><div class="footer-line"></div><div class="footer-text">© 2026 LZ Signature</div></footer>
   </div>
+
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal-close" id="modalClose" aria-label="Fermer">x</button>
@@ -159,6 +584,7 @@
       </div>
     </div>
   </div>
+
   <script>
     const INSTAGRAM_URL = "https://www.instagram.com/lz_blazers/";
     const VINTED_URL = "https://www.vinted.fr/member/27532797-lzblazers?utm_source=ig&utm_medium=social&utm_content=link_in_bio";
@@ -182,6 +608,15 @@
       casquettes: "Casquette",
       cravattes: "Cravatte"
     };
+
+    const filterOptions = [
+      { id: "tous", label: "Tous" },
+      { id: "blazers", label: "Blazers" },
+      { id: "casquettes", label: "Casquettes" },
+      { id: "cravattes", label: "Cravattes" },
+      { id: "disponible", label: "Disponible" },
+      { id: "vendu", label: "Vendu" }
+    ];
 
     let items = [...FALLBACK_ITEMS];
     let filtreActif = "tous";
@@ -217,16 +652,6 @@
         .replace(/^-+|-+$/g, "");
     }
 
-    function normalizeImages(raw) {
-      if (Array.isArray(raw?.images)) {
-        return raw.images.filter(Boolean).map(convertDriveImageUrl);
-      }
-      return ["image_1", "image_2", "image_3", "image_4", "image_5"]
-        .map((key) => raw?.[key])
-        .filter(Boolean)
-        .map(convertDriveImageUrl);
-    }
-
     function buildDriveImageUrl(fileId) {
       return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1600`;
     }
@@ -244,10 +669,7 @@
       const idMatch = cleanValue.match(/[?&]id=([a-zA-Z0-9_-]+)/i);
       if (idMatch) return idMatch[1];
 
-      if (/^[a-zA-Z0-9_-]{20,}$/.test(cleanValue)) {
-        return cleanValue;
-      }
-
+      if (/^[a-zA-Z0-9_-]{20,}$/.test(cleanValue)) return cleanValue;
       return "";
     }
 
@@ -259,11 +681,22 @@
       return driveId ? buildDriveImageUrl(driveId) : cleanValue;
     }
 
+    function normalizeImages(raw) {
+      if (Array.isArray(raw?.images)) {
+        return raw.images.filter(Boolean).map(convertDriveImageUrl);
+      }
+      return ["image_1", "image_2", "image_3", "image_4", "image_5"]
+        .map((key) => raw?.[key])
+        .filter(Boolean)
+        .map(convertDriveImageUrl);
+    }
+
     function normalizeItem(raw, index = 0) {
       const categorie = String(raw.categorie || "blazers").trim().toLowerCase();
       const images = normalizeImages(raw);
       const pointVente = raw.pointVente || raw.point_vente || "A confirmer";
       const taille = raw.taille ? String(raw.taille).trim() : (categorie === "casquettes" ? "Reglable" : "A confirmer");
+
       return {
         slug: raw.slug || slugify(raw.nom || `article-${index + 1}`),
         nom: raw.nom || raw.name || `Article ${index + 1}`,
@@ -272,72 +705,117 @@
         images: images.length ? images : ["logo-lz.jpg"],
         disponible: raw.disponible === undefined ? true : normalizeBoolean(raw.disponible),
         pointVente,
-        description: raw.description || `${categorie === "casquettes" ? "Casquette" : "Blazer"} customise a la main.`,
+        description: raw.description || `${categorie === "casquettes" ? "Casquette" : categorie === "cravattes" ? "Cravatte" : "Blazer"} customise a la main.`,
         categorie,
         instagramUrl: raw.instagramUrl || raw.instagram_url || INSTAGRAM_URL,
         vintedUrl: raw.vintedUrl || raw.vinted_url || VINTED_URL
       };
     }
 
-    async function loadRemoteItems() {
-      const separator = CATALOGUE_API_URL.includes("?") ? "&" : "?";
-      const response = await fetch(`${CATALOGUE_API_URL}${separator}ts=${Date.now()}`, { cache: "no-store" });
-      if (!response.ok) throw new Error(`Catalogue distant inaccessible (${response.status})`);
-      const payload = await response.json();
-      const remoteItems = Array.isArray(payload) ? payload : payload.items;
-      if (!Array.isArray(remoteItems) || !remoteItems.length) throw new Error("Le catalogue distant est vide.");
-      return remoteItems.map((item, index) => normalizeItem(item, index));
-    }
-
     function createCard(item) {
+      const soldClass = item.disponible === false ? " sold" : "";
       const sizeText = item.categorie === "casquettes" ? item.taille : `Taille ${item.taille}`;
+      const statusLabel = item.disponible === false ? "Vendu" : "Disponible";
+
       return `
         <article class="card" data-slug="${item.slug}">
           <div class="card-image">
             <span class="unique">Piece unique</span>
-            <span class="badge">${item.disponible === false ? "Indisponible" : "Disponible"}</span>
+            <span class="badge${soldClass}">${statusLabel}</span>
             <span class="category-pill">${formatCategory(item.categorie)}</span>
-            <img src="${item.images[0] || "logo-lz.jpg"}" alt="${item.nom}" loading="lazy">
+            <img src="${item.images[0] || "logo-lz.jpg"}" alt="${item.nom}" loading="lazy" onerror="this.onerror=null;this.src='logo-lz.jpg'">
           </div>
           <div class="card-info">
             <div class="card-name">${item.nom}</div>
             <div class="card-bottom">
-              <div class="price">${formatPrice(item.prix)}</div>
-              <div class="size">${sizeText}</div>
+              <div class="card-meta price-group">
+                <span class="card-meta-label">Prix</span>
+                <div class="price">${formatPrice(item.prix)}</div>
+              </div>
+              <div class="card-meta size-group">
+                <span class="card-meta-label">Taille</span>
+                <div class="size">${sizeText}</div>
+              </div>
             </div>
           </div>
         </article>`;
     }
 
+    function renderLoader(count = 6) {
+      const cards = Array.from({ length: count }, () => `
+        <article class="loader-card" aria-hidden="true">
+          <div class="loader-media"></div>
+          <div class="loader-body">
+            <div class="loader-line large"></div>
+            <div class="loader-line medium"></div>
+            <div class="loader-line small"></div>
+          </div>
+        </article>
+      `).join("");
+      gallery.innerHTML = cards + `<div class="loader-note">Chargement du catalogue...</div>`;
+    }
+
+    function renderEmptyState(message) {
+      gallery.innerHTML = `<div class="empty-state">${message}</div>`;
+    }
+
+    function filterItems() {
+      if (filtreActif === "disponible") return items.filter((item) => item.disponible === true);
+      if (filtreActif === "vendu") return items.filter((item) => item.disponible === false);
+      if (filtreActif === "tous") return items;
+      return items.filter((item) => item.categorie === filtreActif);
+    }
+
     function renderGallery() {
-      let filtered = items;
-      if (filtreActif !== "tous") filtered = items.filter((item) => item.categorie === filtreActif);
+      const filtered = filterItems();
+
+      if (!filtered.length) {
+        renderEmptyState("Aucun produit ne correspond a ce filtre pour le moment.");
+        return;
+      }
+
       gallery.innerHTML = filtered.map(createCard).join("");
       document.querySelectorAll(".card").forEach((card) => {
-        card.addEventListener("click", () => openModal(items.find((item) => item.slug === card.dataset.slug)));
+        card.addEventListener("click", () => {
+          openModal(items.find((item) => item.slug === card.dataset.slug));
+        });
       });
     }
 
     function renderFilters() {
-      const options = [
-        { id: "tous", label: "Tous" },
-        { id: "blazers", label: "Blazers" },
-        { id: "casquettes", label: "Casquettes" }
-      ];
-      filtersContainer.innerHTML = options.map((f) => `<button class="filter-btn ${filtreActif === f.id ? "active" : ""}" data-filter="${f.id}">${f.label}</button>`).join("");
-      filtersContainer.querySelectorAll("button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          filtreActif = btn.dataset.filter;
+      filtersContainer.innerHTML = filterOptions.map((filter) => `
+        <button class="filter-btn ${filtreActif === filter.id ? "active" : ""}" data-filter="${filter.id}">
+          ${filter.label}
+        </button>
+      `).join("");
+
+      filtersContainer.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          filtreActif = button.dataset.filter;
           renderFilters();
           renderGallery();
         });
       });
     }
 
+    function setImageSource(imageElement, src, alt) {
+      imageElement.onerror = function() {
+        this.onerror = null;
+        this.src = "logo-lz.jpg";
+      };
+      imageElement.src = src || "logo-lz.jpg";
+      imageElement.alt = alt;
+    }
+
     function updateModalImage() {
       if (!currentItem) return;
-      modalImage.src = currentItem.images[currentImageIndex];
-      modalImage.alt = `${currentItem.nom} - vue ${currentImageIndex + 1}`;
+
+      setImageSource(
+        modalImage,
+        currentItem.images[currentImageIndex],
+        `${currentItem.nom} - vue ${currentImageIndex + 1}`
+      );
+
       carouselCounter.textContent = `${currentImageIndex + 1} / ${currentItem.images.length}`;
       const showNav = currentItem.images.length > 1;
       prevImageBtn.style.display = showNav ? "inline-flex" : "none";
@@ -358,13 +836,15 @@
     }
 
     function openModal(item) {
+      if (!item) return;
+
       currentItem = item;
       currentImageIndex = 0;
       document.getElementById("modal-title").textContent = item.nom;
       document.getElementById("modalDesc").textContent = item.description;
       document.getElementById("modalPrice").textContent = formatPrice(item.prix);
       document.getElementById("modalSize").textContent = item.taille;
-      document.getElementById("modalStatus").textContent = item.disponible === false ? "Indisponible" : "Disponible";
+      document.getElementById("modalStatus").textContent = item.disponible === false ? "Vendu" : "Disponible";
       document.getElementById("modalStyle").textContent = item.pointVente;
       document.getElementById("modalKicker").textContent = `${formatCategory(item.categorie)} unique`;
       modalInstagram.href = item.instagramUrl || INSTAGRAM_URL;
@@ -383,22 +863,46 @@
       currentImageIndex = 0;
     }
 
+    async function loadRemoteItems() {
+      const response = await fetch(CATALOGUE_API_URL, { cache: "default" });
+      if (!response.ok) throw new Error(`Catalogue distant inaccessible (${response.status})`);
+
+      const payload = await response.json();
+      const remoteItems = Array.isArray(payload) ? payload : payload.items;
+      if (!Array.isArray(remoteItems) || !remoteItems.length) throw new Error("Le catalogue distant est vide.");
+
+      return remoteItems.map((item, index) => normalizeItem(item, index));
+    }
+
     async function initCatalogue() {
+      items = [...FALLBACK_ITEMS].map((item, index) => normalizeItem(item, index));
+      renderFilters();
+
+      if (items.length) {
+        renderGallery();
+      } else {
+        renderLoader();
+      }
+
       try {
-        items = await loadRemoteItems();
+        const remoteItems = await loadRemoteItems();
+        items = remoteItems;
+        renderGallery();
       } catch (error) {
         console.warn("Chargement du catalogue distant impossible.", error);
-        items = [...FALLBACK_ITEMS];
+        if (!items.length) {
+          renderEmptyState("Le catalogue est temporairement indisponible.");
+        }
       }
-      renderFilters();
-      renderGallery();
     }
 
     modalClose.addEventListener("click", closeModal);
     modalClose2.addEventListener("click", closeModal);
     prevImageBtn.addEventListener("click", prevImage);
     nextImageBtn.addEventListener("click", nextImage);
-    modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
     document.addEventListener("keydown", (event) => {
       if (!modal.classList.contains("open")) return;
       if (event.key === "Escape") closeModal();
