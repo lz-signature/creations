@@ -211,8 +211,8 @@
       max-width: 92%;
       font-family: "Cormorant Garamond", serif;
       font-size: clamp(1.95rem, 3vw, 2.45rem);
-      line-height: 0.9;
-      letter-spacing: 0.085em;
+      line-height: 0.88;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #fff;
       text-shadow: 0 10px 22px rgba(0,0,0,.55);
@@ -241,15 +241,18 @@
       text-transform: uppercase;
     }
     .price {
+      max-width: 10ch;
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      line-height: 1;
+      font-size: clamp(1.28rem, 2.1vw, 1.5rem);
+      line-height: 0.96;
       color: var(--gold);
+      text-wrap: balance;
     }
     .size {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,.72);
-      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.76);
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -507,8 +510,8 @@
       .card-name { font-size: 1.8rem; max-width: 100%; }
       .card-bottom { width: 100%; gap: 10px 16px; padding-top: 10px; }
       .card-meta-label { font-size: 0.54rem; }
-      .price { font-size: 1.32rem; }
-      .size { font-size: 0.72rem; }
+      .price { font-size: 1.24rem; max-width: 9.5ch; }
+      .size { font-size: 0.7rem; }
       .filter-btn,.cta-link { font-size: 0.68rem; padding: 10px 14px; letter-spacing: 0.16em; }
       .modal { padding: 10px; }
       .modal-panel { max-height: 94vh; border-radius: 22px; }
