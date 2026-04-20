@@ -514,9 +514,30 @@
       .size { font-size: 0.7rem; }
       .filter-btn,.cta-link { font-size: 0.68rem; padding: 10px 14px; letter-spacing: 0.16em; }
       .modal { padding: 10px; }
-      .modal-panel { max-height: 94vh; border-radius: 22px; }
+      .modal-panel { width: min(100%, 420px); max-height: 94vh; border-radius: 22px; }
       .modal-close { top: 12px; right: 12px; }
-      .modal-visual { min-height: 320px; max-height: 42vh; }
+      .modal-grid { min-height: auto; }
+      .modal-visual {
+        min-height: unset;
+        height: min(40vh, 360px);
+        max-height: none;
+        padding: 12px 12px 46px;
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-visual img {
+        object-fit: contain;
+        object-position: center center;
+        border-radius: 14px;
+      }
+      .carousel-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+      }
+      .carousel-btn.prev { left: 10px; }
+      .carousel-btn.next { right: 10px; }
+      .carousel-counter { bottom: 12px; }
       .modal-content { padding: 24px 18px 22px; }
       .modal-title { font-size: clamp(2.2rem, 12vw, 3rem); margin-bottom: 16px; }
       .modal-desc { font-size: 0.94rem; margin-bottom: 24px; }
